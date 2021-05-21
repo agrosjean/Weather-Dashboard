@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,24 +8,105 @@
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Daily Weather Directory</title>
 </head>
 
 <body>
     <header>
-        <h1>Weather Dashboard</h1>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4"><strong>Your Daily Weather Directory</strong></h1>
+                <p class="lead">Where would you like to go?</p>
+            </div>
+        </div>
     </header>
-
-    <div id="main">
-        <input id="search-city">
-        <button type="button" onclick="cityLookUp()" class="userInput" id="search-city"> Search </button>
-    </div>
-
+    <main class="flex-row justify-space-between">
+        <div class="span 4">
+            <div class="card">
+                <h3 class="card-header text-uppercase">Search By City,State</h3>
+                <form id="user-form" class="card-body">
+                    <label class="form-label" for="city-name"></label>
+                    <input name="city-name" id="city-name" type="text" autofocus="true" class="form-input" />
+                    <button type="submit" class="btn bg-info" id="search-city">Get City, State</button>
+                </form>
+            </div>
+        </div>
+        <div class="span 8">
+            <div id="time" class="row-fluid">
+                <div class="span8 container text-center clock">...
+                    <h2>Current Time &amp; Date: <br /> <span id="time-display">00:00:00</span></h2>
+                </div>
+            </div>
+            <div id="currentForecast" class="row-fluid">
+                <div class="span8 container text-center clock">...
+                    <h2>Current weather data written here</h2>
+                    <div class="form-group">
+                        <label for="Current Weather">Example textarea</label>
+                        <textarea class="form-control" id="currentWeather" rows="3"></textarea>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span2">
+                    <form>
+                        <h2> Day 1 5 day</h2>
+                        <div class="form-group">
+                            <label for="Day 1" id="geometric-data">0</label>
+                            <textarea class="form-control" id="day1" rows="3">
+                            </textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="row-fluid">
+                    <div class="span2">
+                        <form>
+                            <h2> Day 2 5 day</h2>
+                            <div class="form-group">
+                                <label for="Day 2">Example textarea</label>
+                                <textarea class="form-control" id="day2" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <form>
+                                <h2> Day 3 5 day</h2>
+                                <div class="form-group">
+                                    <label for="Day 3">Example textarea</label>
+                                    <textarea class="form-control" id="day3" rows="3"></textarea>
+                                </div>
+                            </form>>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span2">
+                                <form>
+                                    <h2> Day 4 5 day</h2>
+                                    <div class="form-group">
+                                        <label for="Day 4">Example textarea</label>
+                                        <textarea class="form-control" id="day4" rows="3"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span2">
+                                    <form>
+                                        <h2> Day 5 5 day</h2>
+                                        <div class="form-group">
+                                            <label for="Day 5">Example textarea</label>
+                                            <textarea class="form-control" id="day5" rows="3"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-    <script src="assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
