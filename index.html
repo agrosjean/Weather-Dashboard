@@ -1,106 +1,71 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
+    <meta name="Weather Now" content="Curent and Five Day forcast searched by city." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Daily Weather Directory</title>
 </head>
 
 <body>
     <header>
-        <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron jumbotron-fluid jumbotron-weather">
             <div class="container">
-                <h1 class="display-4"><strong>Your Daily Weather Directory</strong></h1>
+                <h1 class="display-4" style><strong>Your Daily Weather Directory</strong></h1>
                 <p class="lead">Where would you like to go?</p>
             </div>
         </div>
     </header>
-    <main class="flex-row justify-space-between">
-        <div class="span 4">
-            <div class="card">
-                <h3 class="card-header text-uppercase">Search By City,State</h3>
-                <form id="user-form" class="card-body">
-                    <label class="form-label" for="city-name"></label>
-                    <input name="city-name" id="city-name" type="text" autofocus="true" class="form-input" />
-                    <button type="submit" class="btn bg-info" id="search-city">Get City, State</button>
-                </form>
-            </div>
-        </div>
-        <div class="span 8">
-            <div id="time" class="row-fluid">
-                <div class="span8 container text-center clock">...
-                    <h2>Current Time &amp; Date: <br /> <span id="time-display">00:00:00</span></h2>
+    <main class="container">
+        <div class="row">
+            <section id="city-choice" class="col-md-3">
+                <div class="card card-search">
+                    <h3 class="card-header text-uppercase">Search for a City</h3>
+                    <section id="geometric-data" class="card-body">
+                        <label class="form-label" for="city">City</label>
+                        <label class="form-label" for="city-name"></label>
+                        <input name="city-name" id="city-name" type="text" class="form-input" />
+                        <button type="submit" class="btn bg-info" id="search-city">City Name</button>
+                        <h6 class="subtitle"><span id="chosen-city"></span></h6>
+                    </section>
                 </div>
-            </div>
-            <div id="currentForecast" class="row-fluid">
-                <div class="span8 container text-center clock">...
-                    <h2>Current weather data written here</h2>
-                    <div class="form-group">
-                        <label for="Current Weather">Example textarea</label>
-                        <textarea class="form-control" id="currentWeather" rows="3"></textarea>
+            </section>
+            <section id="weather-input" class="col-md-9">
+                <div class="card">
+                    <div class="current-city">
+                        <h2 class="subtitle">Current Weather for: <span id="current-city"></span></h2>
+                        <div data-index="0" id="current-weather-container"></div>
                     </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span2">
-                    <form>
-                        <h2> Day 1 5 day</h2>
-                        <div class="form-group">
-                            <label for="Day 1" id="geometric-data">0</label>
-                            <textarea class="form-control" id="day1" rows="3">
-                            </textarea>
+                    <h2 class="subtitle">5 Day forcast<span id="fiveday"></span>
+                    </h2>
+                    <div id="five-day-container" class="row">
+                        <div data-index="1" id="day-one-container" class="card col">
+                            <h4></h4>
                         </div>
-                    </form>
-                </div>
-                <div class="row-fluid">
-                    <div class="span2">
-                        <form>
-                            <h2> Day 2 5 day</h2>
-                            <div class="form-group">
-                                <label for="Day 2">Example textarea</label>
-                                <textarea class="form-control" id="day2" rows="3"></textarea>
-                            </div>
-                        </form>
+                        <div data-index="2" id="day-two-container" class="card col">
+                            <h4></h4>
+                        </div>
+                        <div data-index="3" id="day-three-container" class="card col">
+                            <h4></h4>
+                        </div>
+                        <div data-index="4" id="day-four-container" class="card col">
+                            <h4></h4>
+                        </div>
+                        <div data-index="5" id="day-five-container" class="card col">
+                            <h4></h4>
+                        </div>
                     </div>
-                    <div class="row-fluid">
-                        <div class="span2">
-                            <form>
-                                <h2> Day 3 5 day</h2>
-                                <div class="form-group">
-                                    <label for="Day 3">Example textarea</label>
-                                    <textarea class="form-control" id="day3" rows="3"></textarea>
-                                </div>
-                            </form>>
-                        </div>
-                        <div class="row-fluid">
-                            <div class="span2">
-                                <form>
-                                    <h2> Day 4 5 day</h2>
-                                    <div class="form-group">
-                                        <label for="Day 4">Example textarea</label>
-                                        <textarea class="form-control" id="day4" rows="3"></textarea>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="row-fluid">
-                                <div class="span2">
-                                    <form>
-                                        <h2> Day 5 5 day</h2>
-                                        <div class="form-group">
-                                            <label for="Day 5">Example textarea</label>
-                                            <textarea class="form-control" id="day5" rows="3"></textarea>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+            </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>

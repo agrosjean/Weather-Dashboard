@@ -1,0 +1,43 @@
+body {
+  font-family:'PT Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+.card-search{
+  border:#4bacb8;
+}
+.jumbotron h1{
+  text-shadow: 2px 2px #151418;
+}
+.jumbotron {
+  text-align: center;
+  background-color:  #5b6f9b;
+  color: rgb(49, 58, 70);
+  border-radius: 5;
+  border-bottom: 5px solid rgb(63, 6, 219);
+  text-shadow: 2px 2px #151418;
+}
+.jumbotron-weather {
+  max-width: 100%;
+  background-size: cover;
+}
+.jumbotron-weather img{
+}
+.main{
+  background-image:url(./assets/img) ;
+}
+  
