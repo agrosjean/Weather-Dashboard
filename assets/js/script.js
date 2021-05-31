@@ -20,7 +20,7 @@ $(document).ready(function () {
         console.log("current searched was: ", city);
         $("#chosen-city").text(city);
         $("#current-city").text(city);
-        var currentUrlApi = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+        var currentUrlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
         console.log("current day communication succeed: ", currentUrlApi);
         $.ajax({
             url: currentUrlApi,
