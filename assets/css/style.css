@@ -40,4 +40,8 @@ body {
 .main{
   background-image:url(./assets/img) ;
 }
+
+.previous-cities {
+  margin: 20px 0px;
+}
   

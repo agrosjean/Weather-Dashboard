@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Daily Weather Directory</title>
 </head>
+3
 
 <body>
     <header>
@@ -34,7 +35,9 @@
                         <label class="form-label" for="city-name"></label>
                         <input name="city-name" id="city-name" type="text" class="form-input" />
                         <button type="submit" class="btn bg-info" id="search-city">City Name</button>
-                        <h6 class="subtitle"><span id="chosen-city"></span></h6>
+                        <div class="previous-cities" id="previous-cities"></div>
+                        <button type="submit" class="btn bg-info" onclick="clearHistory()" id="clear-city">Clear
+                            History</button>
                     </section>
                 </div>
             </section>
